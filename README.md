@@ -36,45 +36,38 @@ Bankrupt → 5,220
 Note: The data is highly imbalanced, requiring special handling to avoid biased predictions.
 
 ## ⚙️ Machine Learning Pipeline
-Preprocessing
-Data cleaning and transformation
+Below is our end-to-end pipeline for this project:
+<img width="360" height="859" alt="image" src="https://github.com/user-attachments/assets/4595b466-be2d-470b-bd42-1d667d6fe335" />
+## 🔎 Data Exploration
 
-Class balancing:
+We explored feature relationships using a correlation heatmap:
 
-Reduced the “alive” class from 74,462 → 35,000 to improve balance
+<img width="612" height="597" alt="image" src="https://github.com/user-attachments/assets/4c06f6d6-aa83-4591-8454-b7ae93333b7c" />
 
-Feature exploration:
+We also visualized feature relationships with scatter plots:
 
-Correlation matrix
+<img width="624" height="605" alt="image" src="https://github.com/user-attachments/assets/473084c7-685c-453d-bbb2-4f2a0fcf1edc" />
 
-Histograms
 
-Scatter plots
+## 📊 Model Evaluation and Results
 
-Algorithms Tested
-Algorithm	AUC (All Data)	AUC (Reduced Data)	Remarks
-Random Forest	0.87	0.87	Best performance overall
-K-Nearest Neighbors	0.72	0.72	Good, but lower recall
-Decision Tree	0.64	0.64	Moderate, lower precision
-SVC (Support Vector Classifier)	0.68	0.68	Moderate, sensitive to imbalance
-Gaussian Naive Bayes	0.58	0.58	Poor for this data
-Bernoulli Naive Bayes	0.56	0.56	Poor for imbalanced data
-Logistic Regression	Evaluated	Evaluated	Lower than Random Forest
+Here’s our comparison of algorithms:
 
-Evaluation Metrics
-Accuracy
+<img width="633" height="426" alt="image" src="https://github.com/user-attachments/assets/fc93a1ef-aa8c-4bd6-9006-908dc74d0a74" />
 
-Precision, Recall, F1-score
+### Precision-Recall Curve
 
-Confusion Matrix
+Random Forest achieved the best PR AUC:
 
-ROC Curve
+<img width="1055" height="420" alt="image" src="https://github.com/user-attachments/assets/f9d37aa5-78b6-46ca-bcb3-7263e211ecab" />
 
-Precision-Recall Curve (PR Curve)
+### ROC Curve
 
-Best Overall Model: Random Forest achieved the highest AUC (0.87) and strong balance between precision and recall.
+ROC comparison across models:
 
-## 📈 Results
+<img width="900" height="420" alt="image" src="https://github.com/user-attachments/assets/a47f7010-ae66-49d8-a834-60e916aa214f" />
+
+
 Random Forest achieved:
 
 AUC: 0.87
